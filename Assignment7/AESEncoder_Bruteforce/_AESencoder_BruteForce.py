@@ -1,5 +1,17 @@
 #!/usr/bin/env python
 
+#AES encoder , encode and create a encrypted shellcode
+#shellcode bruteforce key in each execution
+#key must be short (1-4) caracters max
+#if more , can take long time to bruteforce
+#Free for use
+#Christophe GOY id - SLAE64-1337
+
+
+
+
+
+
 import sys
 import os
 import subprocess
