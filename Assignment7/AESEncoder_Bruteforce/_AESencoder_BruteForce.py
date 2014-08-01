@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-import md5
 import sys
 import os
 import subprocess
