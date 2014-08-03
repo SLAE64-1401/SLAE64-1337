@@ -31,4 +31,4 @@ Assignment 7 :
 Crypter "_AESEncoder_Bruteforce with Execve Stack"
 
 
-Other Shellcode , " Add_User_Password (stack method) , " Disable ASLR " , Read_Etc_Shadow_Etc_Password_Write_To_File)
+Other Shellcode , " Add_User_Password (stack method) , " Disable ASLR " , Read_Etc_Shadow_Etc_Password_Write_To_File (tmp/outfile))
