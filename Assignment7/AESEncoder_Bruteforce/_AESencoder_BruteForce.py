@@ -51,7 +51,7 @@ header += "#include \"polarssl/include/aes.h\"\n"
 header += "#include \"polarssl/include/sha256.h\"\n\n"
 header += "#include \"polarssl/include/sha1.h\"\n\n"
 
-def Create_File_For_Sha(password , output_len):                                                                          #Create a C file to convert hash password in SHA
+def Create_File_For_Sha(password):                                                                          #Create a C file to convert hash password in SHA
 
 
 	main = "int main()\n{\n"
@@ -80,7 +80,7 @@ def Grab_Sha_Output():
 
 
 
-def Create_File_For_AES256_Key_Generator(password ,  input_len , output_len):                                                                                #Create a C file to convert password in Md5 hash
+def Create_File_For_AES256_Key_Generator(password ,  input_len ):                                                                                #Create a C file to convert password in Md5 hash
 
 
 
@@ -206,10 +206,10 @@ def Create_Shellcode():
 
         print("\nIV Value :\n\n\"{0}\"\n".format(IV))
 
-	Create_File_For_Sha(password , output_len)
+	Create_File_For_Sha(password)
         Sha = Grab_Sha_Output()
 
-        Create_File_For_AES256_Key_Generator(password ,  input_len , output_len)
+        Create_File_For_AES256_Key_Generator(password ,  input_len)
         AES_Key = Grab_AESKey_Output()
 
 	Create_File_For_Encode_Shellcode(shellcode ,password , AES_Key ,IV , input_len , output_len ,  header)
