@@ -3,8 +3,8 @@
 ;Exam Assignment 1
 ;Bind_TCP 4444  with password                 ;
 ;Default password = Pass                        ;
-;If connected the shellcode no prompt for password   ;
-;Enter password directly and you get the bin/sh shell;
+;If connected the shellcode no ask for password   ;
+;Enter password directly and you get the /bin/sh shell;
 ;if password is wrong the shellcode exit:            ;
 ;Christophe G SLAE64 - 1337                 ;
 

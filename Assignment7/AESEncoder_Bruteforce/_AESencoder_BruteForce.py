@@ -61,8 +61,7 @@ def Create_File_For_Sha(password , output_len):                                 
 
       	main_sha = " sha1_context sha_ctx;\nsha1_starts(&sha_ctx);\nsha1_update(&sha_ctx, password, pass_len);\nsha1_finish(&sha_ctx, key);\n"
 
-        main_print = "\nfor(i = 0 ; i < 20 ; i++){{\nprintf(\"\\\\x%x\" , key[i] );}};\n".format(output_len)
-
+        main_print = "\nfor(i = 0 ; i < 20 ; i++){{\nprintf(\"\\\\x%x\" , key[i] );}};\n"
         main_end = "return 0;\n}"
 
 	_file = open("temp_sha.c" , "w")
@@ -93,8 +92,7 @@ def Create_File_For_AES256_Key_Generator(password ,  input_len , output_len):   
 
         main_sha256 = "sha256_context sha256_ctx;\nsha256_starts(&sha256_ctx, 0);\nsha256_update(&sha256_ctx, password, pass_len);\nsha256_finish(&sha256_ctx, key);\n"
 
-	main_print = "\nfor(i = 0 ; i < 32 ; i++){{\nprintf(\"\\\\x%x\" , key[i] );}};\n".format(output_len)
-
+	main_print = "\nfor(i = 0 ; i < 32 ; i++){{\nprintf(\"\\\\x%x\" , key[i] );}};\n"
 	main_end = "return 0;\n}"
 
 	_file = open("temp_aeskeygenerator.c" , "w")
