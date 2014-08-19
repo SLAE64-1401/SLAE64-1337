@@ -39,7 +39,7 @@ for x in bytearray(shellcode) :
         a = random.randint(0, 127) #  random byte [0x00 , 0x7f]
         b = a + 1                  # lower value of randint function to xor byte a
 	temp.append(x)
-        temp.append(b ^ random.randint(b + 1 , 254)) # random byte random XORed , separate range to avoid null
+        temp.append(a ^ random.randint(b , 254)) # random byte random XORed , separate range to avoid null
 
 
 
